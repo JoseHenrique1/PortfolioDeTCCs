@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+
+{% block conteudo %}
+<h1>Login</h1>
+<form method="post">
+    <input type="hidden" name="proxima" value="{{ proxima or 'index' }}">
+    <p>{{ a }}</p>
+    <p>{{ b }}</p>
+    <p>{{ c }}</p>
+    <p>{{ proxima }} eita</p>
+    <input type="text" placeholder="Email" name="email">
+    <input type="password" placeholder="Password" name="password">
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock %}

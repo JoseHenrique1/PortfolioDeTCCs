@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+
+{% block conteudo %}
+<h1>Cadastrar Curso</h1>
+<form method="post">
+    <input type="text" placeholder="Nome" name="nome">
+    <input type="text" placeholder="Graduação" name="graduacao">
+    <input type="submit" value="Cadastrar">
+</form>
+
+{% endblock %}

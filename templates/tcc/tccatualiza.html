@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+
+{% block conteudo %}
+<h1>Atualizar TCC</h1>
+<form method="post">
+    <input type="text" placeholder="Titulo" name="titulo" value="{{ tcc.titulo }}">
+
+
+    <select name="autor" id="">
+        {% for user in users %}
+
+            {% if user.id == tcc.autor %}
+            <option selected value="{{ user.id }}">{{ user.username }}</option>
+
+            {% else %}
+            <option value="{{ user.id }}">{{ user.username }}</option>
+            
+            {% endif %}
+
+        {% endfor %}
+    </select>
+
+    <select name="orientador" id="">
+        {% for user in users %}
+
+            {% if user.id == tcc.orientador %}
+            <option selected value="{{ user.id }}">{{ user.username }}</option>
+
+            {% else %}
+            <option value="{{ user.id }}">{{ user.username }}</option>
+            
+            {% endif %}
+
+        {% endfor %}
+    </select>
+
+    <select name="curso" id="">
+        {% for curso in cursos %}
+
+            {% if curso.id == tcc.curso %}
+            <option selected value="{{ curso.id }}">{{ curso.nome }}</option>
+
+            {% else %}
+            <option value="{{ curso.id }}">{{ curso.nome }}</option>
+            
+            {% endif %}
+
+        {% endfor %}
+    </select>
+
+    <input type="submit" value="Atualizar TCC">
+</form>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+#criar venv
+
+py -m venv NOMEVENV
+
+
+
+#ativar venv
+
+cd NOMEVENV/Scripts
+activate
+
+
+
+#voltar a pasta do projeto
+
+cd ..
+cd ..
+
+
+
+#instalar os pacotes
+
+pip install -r requirements.txt
+
+
+
+#rodar o codigo
+
+flask --app app.py run

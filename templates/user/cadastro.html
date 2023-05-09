@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+
+{% block conteudo %}
+<h1>Cadastrar user</h1>
+<form method="post">
+    <input type="text" placeholder="Username" name="username">
+    <input type="text" placeholder="Email" name="email">
+    <input type="password" placeholder="Password" name="password">
+    <input type="submit" value="Cadastrar">
+</form>
+
+{% endblock %}

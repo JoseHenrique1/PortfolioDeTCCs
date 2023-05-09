@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+
+{% block conteudo %}
+<h1>Cadastrar TCC</h1>
+<form method="post">
+    <input type="text" placeholder="Titulo" name="titulo">
+
+    <select name="autor" id="">
+        {% for user in users %}
+        <option value="{{ user.id }}">{{ user.username }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="orientador" id="">
+        {% for user in users %}
+        <option value="{{ user.id }}">{{ user.username }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="curso" id="">
+        {% for curso in cursos %}
+        <option value="{{curso.id}}">{{ curso.nome }}</option>
+        {% endfor %}  
+    </select>
+
+    <input type="submit" value="Cadastrar TCC">
+</form>
+
+{% endblock %}
