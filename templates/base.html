@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
     <title>Repositório de TCC</title>
     {% endblock %}
 </head>
@@ -20,6 +20,7 @@
         <a class="navLink" href="{{ url_for('login') }}">Login</a>
         <a class="navLink"class="navLink" href="{{ url_for('cadastro') }}">Cadastrar</a>
         {% endif %}
+        <a class="navLink" href="{{ url_for('admin') }}">Area administrativa</a>
     </nav>
 
     {% with messages = get_flashed_messages() %}

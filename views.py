@@ -10,6 +10,14 @@ def index():
     cursos = Curso.query.all()
     return render_template('index.html', users=users, tccs=tccs, cursos=cursos)
 
+
+@app.route('/admin')
+def admin():
+    users = User.query.all()
+    tccs = Tcc.query.all()
+    cursos = Curso.query.all()
+    return render_template('admin.html', users=users, tccs=tccs, cursos=cursos)
+
 #                                  TCC
 
 
@@ -31,10 +39,8 @@ def tcccadastro():
         orientador = request.form['orientador']
         curso = request.form['curso']
         tcc = Tcc(titulo, autor, orientador, curso)
-        print('cheguei add')
         db.session.add(tcc)
         db.session.commit()
-        print('passe commit')
         return redirect(url_for('index'))  
     return render_template('tcc/tcccadastro.html', users=users, cursos=cursos)
 
@@ -124,11 +130,11 @@ def login():
           
         flash('login feito com sucesso')
         login_user(user)
-        print(proxima)
-        print('proxima acima')
         return redirect(url_for(proxima))
+    
+    proxima = request.args.get('proxima')
         
-    return render_template('user/login.html')
+    return render_template('user/login.html', proxima=proxima)
 
 
 @app.route('/logout')
